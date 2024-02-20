@@ -23,7 +23,6 @@ public class DiceGameViewer extends JFrame{
     // Main paint function. Uses conditionals and the gameState to print different game screens
     public void paint(Graphics g) {
         // Covers up any previous graphics
-        System.out.println("paint() state: " + gameInfo.getGameState());
         g.setColor(Color.white);
         g.fillRect(0, 0, 500, 500);
         g.setColor(Color.black);
