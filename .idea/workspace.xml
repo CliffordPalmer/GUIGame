@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d63aa179-3a74-452f-8194-aa2f1eebe577" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUIGame.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiceGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiceGameViewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Die.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="d63aa179-3a74-452f-8194-aa2f1eebe577" name="Changes" comment="Drew Table">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiceGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiceGameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceGameViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Die.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Die.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +42,11 @@
     "onboarding.tips.debug.path": "/Users/Clifford/IdeaProjects/GUIGame/src/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +56,20 @@
       <option name="presentableId" value="Default" />
       <updated>1707334159405</updated>
     </task>
+    <task id="LOCAL-00001" summary="Drew Table">
+      <option name="closed" value="true" />
+      <created>1707947090231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707947090231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Drew Table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drew Table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -66,6 +78,11 @@
           <url>file://$PROJECT_DIR$/src/DiceGame.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DiceGameViewer.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

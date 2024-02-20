@@ -9,7 +9,10 @@ public class Die
     private Image[] dice;
     /** Constructors **/
 
-    public Die(int numSides) {
+    private DiceGameViewer window;
+
+    int roll;
+    public Die(int numSides, DiceGameViewer window) {
         // TODO: Complete this constructor
         // NOTE: if the user enters an int less than 2
         // set numSides to 6.
@@ -26,6 +29,8 @@ public class Die
         dice[3] = new ImageIcon("Resources/dice-six-faces-four.png").getImage();
         dice[4] = new ImageIcon("Resources/dice-six-faces-five.png").getImage();
         dice[5] = new ImageIcon("Resources/dice-six-faces-six.png").getImage();
+
+        this.window = window;
     }
 
     public Die() {
@@ -45,13 +50,12 @@ public class Die
      * Returns a random int between 1 and
      * the number of sides on the Die
      */
-    public int roll(int rollNum) {
+    public int roll() {
         // TODO: complete roll()
-        int sum = 0;
-        for (int i = 0; i < rollNum; i++){
-            sum += (int)(Math.random() * (numSides) + 1);
-        }
-        return sum;
+
+        roll = (int)(Math.random() * (numSides) + 1);
+
+        return roll;
     }
 
     /**
@@ -62,7 +66,7 @@ public class Die
         // TODO: complete getMaxRoll()
         int highest = 0;
         for(int i = 0; i < numRolls; i++){
-            int roll = roll(1);
+            int roll = roll();
             if(roll > highest){
                 highest = roll;
             }
@@ -84,4 +88,7 @@ public class Die
     }
 
 
+    public void draw(Graphics g){
+        g.drawImage(dice[roll - 1], (int)(Math.random() * (230) + 120), (int)(Math.random() * (300) ) + 100, 30, 30, window);
+    }
 }

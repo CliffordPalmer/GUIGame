@@ -10,10 +10,16 @@ public class DiceGame {
     private Player p1, p2;
     private String winner;
 
+    private int gameState;
+
+    private int playerTurn;
+
     public DiceGame(){
+        gameState = 0;
+        d1 = new Die(6, window);
+        d2 = new Die(6, window);
         window = new DiceGameViewer(this);
-        d1 = new Die(6);
-        d2 = new Die(6);
+        playerTurn = 1;
     }
 
     public void run() {
@@ -22,46 +28,59 @@ public class DiceGame {
         // create a scanner to read user input
         Scanner input = new Scanner(System.in);
 
-        // notify the user of their choice
-        System.out.println(d1.toString() + "\n");
-
+        gameState = 1;
+        window.repaint();
         // take user input to set the name of each player, and their knockout number
         System.out.println("Player one, please enter your name, and then your knockout number. Your knockout number must be between " + d1.getSides() + " and " + (d1.getSides() + 2) + ", inclusive:");
         p1 = new Player(input.nextLine(), input.nextInt());
         input.nextLine();
+        gameState = 2;
+        window.repaint();
         System.out.println("Thank you! Player two, please enter your name and then your knockout number. It must follow the same criteria as " + p1.getName() + "'s knockout number:");
         p2 = new Player(input.nextLine(), input.nextInt());
         input.nextLine();
 
-
         do {
             do {
+                gameState = 3;
+                window.repaint();
+                playerTurn = 1;
                 do {
                     System.out.println(p1.getName() + ", would you like to roll?(y/n)");
                 } while (!(input.nextLine().equals("y")));
-                p1Sum = d1.roll(2);
+                gameState = 4;
+                p1Sum = d1.roll() + d2.roll();
                 System.out.println(p1.getName() + " rolled " + p1Sum + "!");
+                window.repaint();
                 if (p1Sum == p1.getNum()) {
                     System.out.println("Oops! Player one is knocked out!");
                     p2.addWin();
+                    gameState = 5;
                     break;
                 }
+                playerTurn = 2;
                 do {
                     System.out.println(p2.getName() + ", would you like to roll?(y/n)");
                 } while (!(input.nextLine().equals("y")));
-                p2Sum = d2.roll(2);
+                p2Sum = d1.roll() + d2.roll();
                 System.out.println(p2.getName() + " rolled " + p2Sum + " !");
+                window.repaint();
                 if (p2Sum == p2.getNum()) {
                     System.out.println("Oops! Player two is knocked out!");
                     p1.addWin();
+                    gameState = 5;
                     break;
                 }
             } while (true);
             System.out.println("Would you like to play another round?(y/n)");
             if (!(input.nextLine().equals("y"))) {
+                gameState = 7;
+                window.repaint();
                 break;
             } else {
                 System.out.println("Awesome!");
+                gameState = 6;
+                window.repaint();
             }
         } while (contn = true);
         if (p1.getWins() > p2.getWins()) {
@@ -71,6 +90,22 @@ public class DiceGame {
         } else {
             System.out.println("This game ended in a draw. Each player had " + p1.getWins() + " total wins!");
         }
+    }
+
+    public Die getD1() {
+        return d1;
+    }
+
+    public Die getD2() {
+        return d2;
+    }
+
+    public int getGameState() {
+        return gameState;
+    }
+
+    public int getPlayerTurn() {
+        return playerTurn;
     }
 
     public static void main(String[] args) {
