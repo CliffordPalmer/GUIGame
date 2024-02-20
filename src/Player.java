@@ -12,6 +12,8 @@ public class Player {
         wins = 0;
     }
 
+    // Getters and setters
+
     public String getName(){
         return playerName;
     }
