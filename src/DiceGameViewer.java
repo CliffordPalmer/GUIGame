@@ -16,7 +16,7 @@ public class DiceGameViewer extends JFrame{
         this.gameInfo = gameInfo;
         // Initialize window
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle("Tic Tac Toe");
+        this.setTitle("Knockout!");
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setVisible(true);
     }

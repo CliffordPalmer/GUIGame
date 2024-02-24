@@ -17,13 +17,13 @@ public class DiceGame {
     public DiceGame(){
         // Initialize gameState
         gameState = 0;
+        // Initialize PlayerTurn
+        playerTurn = 1;
         // Create two dice to be used in the game
         d1 = new Die(6, window);
         d2 = new Die(6, window);
         // Create the front end object
         window = new DiceGameViewer(this);
-        // Initialize PlayerTurn
-        playerTurn = 1;
     }
 
     public void run() {
